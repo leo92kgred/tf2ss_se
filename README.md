@@ -1,4 +1,4 @@
-# tf2ss second edition
+# ABOUT and HOWTO tf2ss second edition
 
 # tf2ss function returns unstable system.
 
