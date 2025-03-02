@@ -302,7 +302,7 @@ $......$\
 $Let\ x_{n-2}=\boldsymbol{\vartheta}s^{n-2}Y(s) \to x_{n-2}'=\boldsymbol{\vartheta}s^{n-2}Y(s)=\dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} x_n$\
 $Let\ x_{n-1}=\boldsymbol{\varphi}s^{n-2}Y(s) \to x_{n-1}'=\boldsymbol{\varphi}s^{n-1}Y(s)=\boldsymbol{\varphi} x_n$\
 $Let\ x_n\quad =\quad s^{n-1}Y(s) \to x_n'\quad =\quad \ \ \ \ \ s^nY(s) = -a_n Y(s) -a_{n-1} sY(s) -a_{n-2} s^2Y(s) ...-a_2 s^{n-2}Y(s) -a_1 s^{n-1}Y(s) +u(s) $
-$\qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad \quad \quad \quad \quad \quad = -\dfrac{\boldsymbol{\alpha}}{\boldsymbol{\beta}} a_n x_1 -\dfrac{\boldsymbol{\beta}}{\boldsymbol{\gamma}} a_{n-1} x_2 -\dfrac{\boldsymbol{\gamma}}{\boldsymbol{\delta}} a_{n-2} x_3 ...... - \dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} a_2 x_{n-1} -\boldsymbol{\varphi} a_1 x_n + u $
+$\qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad \quad \quad \quad \quad \quad = -\dfrac{\boldsymbol{a_n}}{\boldsymbol{\alpha}} x_1 -\dfrac{\boldsymbol{a_{n-1}}}{\boldsymbol{\beta}} x_2 -\dfrac{\boldsymbol{a_{n-2}}}{\boldsymbol{\gamma}} x_3 ...... - \dfrac{\boldsymbol{a_2}}{\boldsymbol{\vartheta}} x_{n-1} -a_1 x_n + u $
 
 $$x'=\begin{bmatrix}
 0 & \dfrac{\boldsymbol{\alpha}}{\boldsymbol{\beta}} & 0 & 0 & ... & 0 & 0\\
@@ -311,7 +311,7 @@ $$x'=\begin{bmatrix}
 ... & ... & ... & ... & ... & ... & ...\\
 0 & 0 & 0 & 0 & ... & \dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} & 0\\
 0 & 0 & 0 & 0 & ... & 0 & \boldsymbol{\varphi}\\
--\dfrac{\boldsymbol{\alpha}}{\boldsymbol{\beta}} a_n & -\dfrac{\boldsymbol{\beta}}{\boldsymbol{\gamma}} a_{n-1} & -\dfrac{\boldsymbol{\gamma}}{\boldsymbol{\delta}} a_{n-2} & -\dfrac{\boldsymbol{\delta}}{\boldsymbol{\epsilon}} a_{n-3} & ... & -\dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} a_2 & -\boldsymbol{\varphi} a_1
+-\dfrac{\boldsymbol{a_n}}{\boldsymbol{\alpha}} & -\dfrac{\boldsymbol{a_{n-1}}}{\boldsymbol{\beta}} & -\dfrac{\boldsymbol{a_{n-2}}}{\boldsymbol{\gamma}} & -\dfrac{\boldsymbol{a_{n-3}}}{\boldsymbol{\delta}} & ... & -\dfrac{\boldsymbol{a_2}}{\boldsymbol{\varphi}} & -a_1
 \end{bmatrix} + \begin{bmatrix}
 0\\
 0\\
