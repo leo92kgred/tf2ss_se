@@ -323,7 +323,7 @@ $$y = \begin{bmatrix}
 \end{bmatrix} + 0*u$$
 
 If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, \epsilon, \zeta, \eta, \theta, ..., \vartheta, \varphi}$) are modified to obtain "coefficient of the matrix = multiple of 2($2^n$)" after the continuous-to-discrete conversion,
-the computational load can be reduced.
+the computational load can be reduced.(with sampling time(=Ts))
 
 <p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>
 
