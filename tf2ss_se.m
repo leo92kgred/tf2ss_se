@@ -11,11 +11,15 @@
 ####################################################################################
 
 function [A,B,C,D]=tf2ss_se (num,den)
+	[zero_x,zero_y_num]=find(num==0);
+	[zero_x,zero_y_den]=find(den==0);
 	if(nargin == 0)
 		disp("No values provided\n");
 	elseif(size(num,2)==size(den,2))
 		disp("don't support\n");
-	else
+	elseif(zero_y_num>=1 || zero_y_den>=1)
+		disp("don't support\n");
+ 	else
 	
 		A=zeros(size(den,2)-1);
 		B=zeros(1,size(den,2)-1)';
