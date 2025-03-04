@@ -50,6 +50,7 @@ ans =
   -1.2000e+10 - 2.5771e+11i
 >> zero(sys_tf)
 ans = -34000000000
+>>
 </code>
 </pre>
     </td>
@@ -76,17 +77,19 @@ I watched the derivation process of the equation closely and got something weird
 
 $$Transfer\ Function = \dfrac{b_1s + b_2}{s^4Y(s) + a_1s^3Y(s) + a_2s^2Y(s) + a_3sY(s) + a_4}$$
 
-$Let\ x_1=Y(s)\ \to x_1'= sY(s)= x_2$\
+$Let\ x_1= \ \ Y(s)\ \to x_1' = \ sY(s)= x_2$\
 $Let\ x_2=sY(s)\ \to x_2'=s^2Y(s)= x_3$\
 $Let\ x_3=s^2Y(s) \to x_3'=s^3Y(s) = x_4$\
-$Let\ x_4=s^3Y(s) \to x_4'=s^4Y(s) = -a_4 Y(s) -a_3 sY(s) -a_2 s^2Y(s) -a_1 s^3Y(s) + U(s)= -a_4 x_1 -a_3 x_2 -a_2 x_3 -a_1 x_4 + u $
+$Let\ x_4=s^3Y(s) \to x_4'=s^4Y(s) = -a_4 Y(s) -a_3 sY(s) -a_2 s^2Y(s) -a_1 s^3Y(s) + U(s) $
+$\qquad \qquad \qquad \qquad \qquad \qquad \ \ \ \ \ = \ - \ a_4 x_1 \ \ - \ \ a_3 x_2 \ \ \ - \ \ \ a_2 x_3 \ \ \ - \ \ \ a_1 x_4 \ \ \ \ \ \ + \ \ u $
 
 There is no reason to do "Let", so I changed it as follows.
 
 $Let\ x_1=a_3Y(s)\ \to x_1'=a_3sY(s)= \dfrac{a_3}{a_2} x_2$\
 $Let\ x_2=a_2sY(s)\ \to x_2'=a_2s^2Y(s)= \dfrac{a_2}{a_1} x_3$\
 $Let\ x_3=a_1s^2Y(s) \to x_3'=a_1s^3Y(s) = a_1 x_4$\
-$Let\ x_4=s^3Y(s) \to x_4'=s^4Y(s) = -a_4 Y(s) -a_3 sY(s) -a_2 s^2Y(s) -a_1 s^3Y(s) + U(s)= -\dfrac{a_4}{a_3} x_1 -\dfrac{a_3}{a_2} x_2 -\dfrac{a_2}{a_1} x_3 -a_1 x_4 + u $
+$Let\ x_4= \ \ s^3Y(s) \to x_4'=s^4Y(s) = -a_4 Y(s) -a_3 sY(s) -a_2 s^2Y(s) -a_1 s^3Y(s) + U(s) $
+$\qquad \qquad \qquad \qquad \qquad \qquad \ \ \ \ \ \ \  = \  - \ \dfrac{a_4}{a_3} x_1 \ \ - \ \ \ \dfrac{a_3}{a_2} x_2 \ \ \ - \ \ \ \dfrac{a_2}{a_1} x_3 \ \ - \ \ \ a_1 x_4 \ \ \ \ \ + \ \ u $
 
 $$x'=\begin{bmatrix}
 0 & \dfrac{a_3}{a_2} & 0 & 0\\
