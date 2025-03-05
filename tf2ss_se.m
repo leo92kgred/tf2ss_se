@@ -21,7 +21,9 @@ function [A,B,C,D]=tf2ss_se (num,den)
 		disp("don't support\n");disp("don't support\n");disp("don't support\n");
   	elseif((size(den,1)>=2)
 		disp("don't support\n");disp("don't support\n");disp("don't support\n");
- 	else
+  	elseif(den(1)!=1)
+		disp("don't support\n");disp("don't support\n");disp("don't support\n");
+  	else
 	
 		A=zeros(size(den,2)-1);
 		B=zeros(1,size(den,2)-1)';
