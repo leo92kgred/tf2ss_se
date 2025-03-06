@@ -325,7 +325,7 @@ $$y = \begin{bmatrix}
 \dfrac{\boldsymbol{b_n}}{\boldsymbol{\alpha}} & \dfrac{\boldsymbol{b_{n-1}}}{\boldsymbol{\beta}} & \dfrac{\boldsymbol{b_{n-2}}}{\boldsymbol{\gamma}} & \dfrac{\boldsymbol{b_{n-3}}}{\boldsymbol{\delta}} & ... & \dfrac{\boldsymbol{b_2}}{\boldsymbol{\vartheta}} & \dfrac{\boldsymbol{b_1}}{\boldsymbol{\varphi}}
 \end{bmatrix} + 0*u$$
 
-If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, \epsilon, \zeta, \eta, \theta, ..., \vartheta, \varphi}$) are modified to obtain "coefficient of the matrix = multiple of 2($2^n$)" after the continuous-to-discrete conversion,
+If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) are modified to obtain "coefficient of the matrix = multiple of 2($2^n$)" after the continuous-to-discrete conversion,
 the computational load can be reduced.(with sampling time(=Ts))
 
 <p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>
