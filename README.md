@@ -161,23 +161,23 @@ ans = -34000000000.00003
 <code>
 >> sys_ss
 sys_ss.a =
-               x1          x2          x3          x4
-   x1   0.0001144  -0.0002071  -8.276e-05  -4.629e+10
-   x2      -1e+11   -5.44e-05  -0.0001899   9.124e+09
-   x3           0       1e+12   0.0001103   1.388e+11
-   x4           0           0      -1e+12   -1.36e+11
+            x1          x2          x3          x4
+x1   0.0001144  -0.0002071  -8.276e-05  -4.629e+10
+x2      -1e+11   -5.44e-05  -0.0001899   9.124e+09
+x3           0       1e+12   0.0001103   1.388e+11
+x4           0           0      -1e+12   -1.36e+11
 sys_ss.b =
-              u1
-   x1      53.98
-   x2     -158.8
-   x3   1.22e-15
-   x4          0
+           u1
+x1      53.98
+x2     -158.8
+x3   1.22e-15
+x4          0
 sys_ss.c =
-             x1        x2        x3        x4
-   y1         0         0         0   -0.0001
+          x1        x2        x3        x4
+y1         0         0         0   -0.0001
 sys_ss.d =
-       u1
-   y1   0
+    u1
+y1   0
 Continuous-time model.
 >></code>
 </pre>
@@ -187,23 +187,23 @@ Continuous-time model.
 <code>
 >> sys_ssn
 sys_ssn.a =
-               x1          x2          x3          x4
-   x1           0   6.573e+10           0           0
-   x2           0           0   1.021e+12           0
-   x3           0           0           0    1.36e+11
-   x4  -5.074e+11  -6.573e+10  -1.021e+12   -1.36e+11
+            x1          x2          x3          x4
+x1           0   6.573e+10           0           0
+x2           0           0   1.021e+12           0
+x3           0           0           0    1.36e+11
+x4  -5.074e+11  -6.573e+10  -1.021e+12   -1.36e+11
 sys_ssn.b =
-       u1
-   x1   0
-   x2   0
-   x3   0
-   x4   1
+    u1
+x1   0
+x2   0
+x3   0
+x4   1
 sys_ssn.c =
-             x1        x2        x3        x4
-   y1  -0.05916   -0.1144         0         0
+          x1        x2        x3        x4
+y1  -0.05916   -0.1144         0         0
 sys_ssn.d =
-       u1
-   y1   0
+    u1
+y1   0
 Continuous-time model.
 >>
 </code>
@@ -242,23 +242,23 @@ The following example works properly with both the transfer function and the sta
 <code>
 >> sys_ss
 sys_ss.a =
-               x1          x2          x3          x4
-   x1   -3.44e-15   2.365e-14  -1.879e-15           2
-   x2         -10   1.776e-15  -2.365e-14        -4.2
-   x3           0         -10  -1.774e-15        13.2
-   x4           0           0         -10       -1000
+            x1          x2          x3          x4
+x1   -3.44e-15   2.365e-14  -1.879e-15           2
+x2         -10   1.776e-15  -2.365e-14        -4.2
+x3           0         -10  -1.774e-15        13.2
+x4           0           0         -10       -1000
 sys_ss.b =
-              u1
-   x1          2
-   x2    -0.0002
-   x3  4.729e-15
-   x4          0
+           u1
+x1          2
+x2    -0.0002
+x3  4.729e-15
+x4          0
 sys_ss.c =
-       x1  x2  x3  x4
-   y1   0   0   0  -1
+    x1  x2  x3  x4
+y1   0   0   0  -1
 sys_ss.d =
-       u1
-   y1   0
+    u1
+y1   0
 Continuous-time model.
 >>
 </code>
@@ -269,23 +269,23 @@ Continuous-time model.
 <code>
 >> sys_ssn
 sys_ssn.a =
-           x1      x2      x3      x4
-   x1       0   3.182       0       0
-   x2       0       0   0.132       0
-   x3       0       0       0    1000
-   x4  -4.762  -3.182  -0.132   -1000
+        x1      x2      x3      x4
+x1       0   3.182       0       0
+x2       0       0   0.132       0
+x3       0       0       0    1000
+x4  -4.762  -3.182  -0.132   -1000
 sys_ssn.b =
-       u1
-   x1   0
-   x2   0
-   x3   0
-   x4   1
+    u1
+x1   0
+x2   0
+x3   0
+x4   1
 sys_ssn.c =
-              x1         x2         x3         x4
-   y1      4.762  0.0001515          0          0
+           x1         x2         x3         x4
+y1      4.762  0.0001515          0          0
 sys_ssn.d =
-       u1
-   y1   0
+    u1
+y1   0
 Continuous-time model.
 >>
 </code>
