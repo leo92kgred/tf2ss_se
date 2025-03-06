@@ -9,8 +9,8 @@ Transfer function and state space model obtained by tf2ss function failed in the
 >>
 >> pkg load control; pkg load signal; clear; 
 >> 
->> alpha=5.6*10^10; beta=1.2*10^10; omega=2*pi*4.1016*10^10; den1=[1 2*alpha alpha^2+omega^2]; den2=[1 2*beta beta^2+omega^2];
->> 
+>> alpha=5.6*10^10; beta=1.2*10^10; omega=2*pi*4.1016*10^10; 
+>> den1=[1 2*alpha alpha^2+omega^2]; den2=[1 2*beta beta^2+omega^2];
 >> num=0.7*omega*[2*(beta-alpha) beta^2-alpha^2]; den=conv(den1, den2);
 >> 
 >> sys_tf=tf(num,den); figure(1); impulse(sys_tf);
@@ -302,7 +302,7 @@ $Let\ x_1=\boldsymbol{\alpha}Y(s)\ \to x_1'=\boldsymbol{\alpha}sY(s)= \dfrac{\bo
 $Let\ x_2=\boldsymbol{\beta}sY(s)\ \to x_2'=\boldsymbol{\beta}s^2Y(s)= \dfrac{\boldsymbol{\beta}}{\boldsymbol{\gamma}} x_3$\
 $Let\ x_3=\boldsymbol{\gamma}s^2Y(s) \to x_3'=\boldsymbol{\gamma}s^3Y(s) = \dfrac{\boldsymbol{\gamma}}{\boldsymbol{\delta}} x_4$\
 $......$\
-$Let\ x_{n-2}=\boldsymbol{\vartheta}s^{n-2}Y(s) \to x_{n-2}'=\boldsymbol{\vartheta}s^{n-2}Y(s)=\dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} x_n$\
+$Let\ x_{n-2}=\boldsymbol{\vartheta}s^{n-3}Y(s) \to x_{n-2}'=\boldsymbol{\vartheta}s^{n-2}Y(s)=\dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} x_{n-1}$\
 $Let\ x_{n-1}=\boldsymbol{\varphi}s^{n-2}Y(s) \to x_{n-1}'=\boldsymbol{\varphi}s^{n-1}Y(s)=\boldsymbol{\varphi} x_n$\
 $Let\ x_n\quad =\quad s^{n-1}Y(s) \to x_n'\quad =\quad \ \ \ \ \ s^nY(s) = -a_n Y(s) -a_{n-1} sY(s) -a_{n-2} s^2Y(s) ...-a_2 s^{n-2}Y(s) -a_1 s^{n-1}Y(s) +u(s) $
 $\qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad \quad \quad \quad \quad \quad = -\dfrac{\boldsymbol{a_n}}{\boldsymbol{\alpha}} x_1 -\dfrac{\boldsymbol{a_{n-1}}}{\boldsymbol{\beta}} x_2 -\dfrac{\boldsymbol{a_{n-2}}}{\boldsymbol{\gamma}} x_3 ...... - \dfrac{\boldsymbol{a_2}}{\boldsymbol{\vartheta}} x_{n-1} -a_1 x_n + u $
