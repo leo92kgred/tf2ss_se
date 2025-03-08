@@ -1,6 +1,8 @@
-# about tf2ss second edition
+# tf2ss second edition
+You can get following result in Octave 9.20.
 
-# tf2ss function returns unstable system.
+
+## tf2ss function returns unstable system.
 
 Transfer function and state space model obtained by tf2ss function failed in the impulse response.
 
@@ -34,7 +36,8 @@ error: called from
 </code>
 </pre>
 
-I checked pole and zero both sides, but pole values are the same but found zero value mismatch between sides.\
+I checked pole and zero both sides, but pole values are the same but zero value mismatch.
+
 I don't know why the impulse response of transfer function doesn't behave as expected.
 
 <table>
@@ -72,7 +75,8 @@ ans = [](0x1)
   </tr>
 </table>
 
-Upon review, I found that there is a problem with the calculation.\
+I found that there is a problem in the calculation.
+
 I watched the derivation process of the equation closely and got something weird.
 
 $$Transfer\ Function = \dfrac{b_1s + b_2}{s^4Y(s) + a_1s^3Y(s) + a_2s^2Y(s) + a_3sY(s) + a_4}$$
@@ -83,7 +87,7 @@ $Let\ x_3=s^2Y(s) \to x_3'=s^3Y(s) = x_4$\
 $Let\ x_4=s^3Y(s) \to x_4'=s^4Y(s) = -a_4 Y(s) -a_3 sY(s) -a_2 s^2Y(s) -a_1 s^3Y(s) + U(s) $
 $\qquad \qquad \qquad \qquad \qquad \qquad \ \ \ \ \ = \ - \ a_4 x_1 \ \ - \ \ a_3 x_2 \ \ \ - \ \ \ a_2 x_3 \ \ \ - \ \ \ a_1 x_4 \ \ \ \ \ \ + \ \ u $
 
-There is no reason to do "Let", so I changed it as follows.
+**There is no reason to do "Let", so I changed it as follows.**
 
 $Let\ x_1= \ a_3Y(s)\ \to x_1'= \ \ a_3sY(s)= \dfrac{a_3}{a_2} x_2$\
 $Let\ x_2=a_2sY(s)\ \to x_2'=a_2s^2Y(s)= \dfrac{a_2}{a_1} x_3$\
@@ -96,7 +100,7 @@ $$x'=\begin{bmatrix}
 0 & 0 & \dfrac{a_2}{a_1} & 0\\
 0 & 0 & 0 & a_1\\
 -\dfrac{a_4}{a_3} & -\dfrac{a_3}{a_2} & -\dfrac{a_2}{a_1} & -a_1
-\end{bmatrix} + \begin{bmatrix}
+\end{bmatrix} x + \begin{bmatrix}
 0\\
 0\\
 0\\
@@ -104,7 +108,7 @@ $$x'=\begin{bmatrix}
 \end{bmatrix} u$$
 $$y = \begin{bmatrix}
 \dfrac{b_2}{a_3} & \dfrac{b_1}{a_2} & 0 & 0
-\end{bmatrix} + 0*u$$
+\end{bmatrix} x + 0*u$$
 
 So I got An, Bn, Cn, Dn matrix and it works in the impulse response.
 
@@ -214,6 +218,8 @@ Continuous-time model.
 
 Moreover, there are more zero values than the state space model obtained from the tf2ss function.
 
+## another example
+
 The following example works properly with both the transfer function and the state space mode.
 
 <pre>
@@ -235,6 +241,9 @@ The following example works properly with both the transfer function and the sta
 </code>
 </pre>
 
+But there are non-zero values in the state space model produced by the tf2ss function.
+
+<p align="center">
 <table>
   <tr>
     <td style="width: 50%;">
@@ -293,10 +302,9 @@ Continuous-time model.
     </td>
   </tr>
 </table>
+</p>
 
-But there are unwanted non-zero values in the state space model produced by the tf2ss function.
-
-# generalization
+## generalization
 
 $Let\ x_1=\boldsymbol{\alpha}Y(s)\ \to x_1'=\boldsymbol{\alpha}sY(s)= \dfrac{\boldsymbol{\alpha}}{\boldsymbol{\beta}} x_2$\
 $Let\ x_2=\boldsymbol{\beta}sY(s)\ \to x_2'=\boldsymbol{\beta}s^2Y(s)= \dfrac{\boldsymbol{\beta}}{\boldsymbol{\gamma}} x_3$\
@@ -315,7 +323,7 @@ $$x'=\begin{bmatrix}
 0 & 0 & 0 & 0 & ... & \dfrac{\boldsymbol{\vartheta}}{\boldsymbol{\varphi}} & 0\\
 0 & 0 & 0 & 0 & ... & 0 & \boldsymbol{\varphi}\\
 -\dfrac{\boldsymbol{a_n}}{\boldsymbol{\alpha}} & -\dfrac{\boldsymbol{a_{n-1}}}{\boldsymbol{\beta}} & -\dfrac{\boldsymbol{a_{n-2}}}{\boldsymbol{\gamma}} & -\dfrac{\boldsymbol{a_{n-3}}}{\boldsymbol{\delta}} & ... & -\dfrac{\boldsymbol{a_2}}{\boldsymbol{\varphi}} & -a_1
-\end{bmatrix} + \begin{bmatrix}
+\end{bmatrix} x + \begin{bmatrix}
 0\\
 0\\
 0\\
@@ -323,12 +331,12 @@ $$x'=\begin{bmatrix}
 \end{bmatrix} u$$
 $$y = \begin{bmatrix}
 \dfrac{\boldsymbol{b_n}}{\boldsymbol{\alpha}} & \dfrac{\boldsymbol{b_{n-1}}}{\boldsymbol{\beta}} & \dfrac{\boldsymbol{b_{n-2}}}{\boldsymbol{\gamma}} & \dfrac{\boldsymbol{b_{n-3}}}{\boldsymbol{\delta}} & ... & \dfrac{\boldsymbol{b_2}}{\boldsymbol{\vartheta}} & \dfrac{\boldsymbol{b_1}}{\boldsymbol{\varphi}}
-\end{bmatrix} + 0*u$$
+\end{bmatrix} x + 0*u$$
 
 If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) are modified to obtain "coefficient of the matrix = multiple of 2($2^n$)" after the continuous-to-discrete conversion,
-the computational load can be reduced.(with sampling time(=Ts))
+the computational load can be reduced.(with sampling time(=*Ts*))
 
-<p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>
+**<p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>**
 
 # License
 Educational Use License
