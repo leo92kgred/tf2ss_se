@@ -1,7 +1,7 @@
 ####################################################################################
 # Educational Use License                                                          #
 #                                                                                  #
-# This software is provided for educational and research purposes only.            #
+# This software is provided for educational purposes only.                         #
 # You may use, modify, and distribute this code only in a non-commercial           #
 # educational setting. Any commercial use, including but not limited to            #
 # selling, licensing, or incorporating this software into commercial products,     #
