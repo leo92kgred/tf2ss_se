@@ -1,10 +1,12 @@
 # tf2ss second edition
 You can get following result in Octave 9.20.
 
+The result is different according to Octave version, but this method is more useful and stable. 
+
 
 ## tf2ss function returns unstable system.
 
-Transfer function and state space model obtained by tf2ss function failed in the impulse response.
+Transfer function and state-space model obtained by tf2ss function fail in the impulse response.
 
 <pre>
 <code>
@@ -36,7 +38,7 @@ error: called from
 </code>
 </pre>
 
-I checked pole and zero both sides, but pole values are the same but zero value mismatch.
+I check pole and zero both sides, but pole values are the same but zero value mismatch.
 
 I don't know why the impulse response of transfer function doesn't behave as expected.
 
@@ -75,9 +77,9 @@ ans = [](0x1)
   </tr>
 </table>
 
-I found that there is a problem in the calculation.
+I think that there is a problem in the calculation.
 
-I watched the derivation process of the equation closely and got something weird.
+I watch the derivation process of the equation closely and get something weird.
 
 $$Transfer\ Function = \dfrac{b_1s + b_2}{s^4Y(s) + a_1s^3Y(s) + a_2s^2Y(s) + a_3sY(s) + a_4}$$
 
@@ -110,7 +112,7 @@ $$y = \begin{bmatrix}
 \dfrac{b_2}{a_3} & \dfrac{b_1}{a_2} & 0 & 0
 \end{bmatrix} x + 0*u$$
 
-So I got An, Bn, Cn, Dn matrix and it works in the impulse response.
+So I get An, Bn, Cn, Dn matrix and it works in the impulse response.
 
 <pre>
 <code>
@@ -216,11 +218,11 @@ Continuous-time model.
   </tr>
 </table>
 
-Moreover, there are more zero values than the state space model obtained from the tf2ss function.
+Moreover, there are more zero values than the state-space model obtained from the tf2ss function.
 
 ## another example
 
-The following example works properly with both the transfer function and the state space mode.
+The following example works properly with both the transfer function and the state-space mode.
 
 <pre>
 <code>
@@ -241,7 +243,7 @@ The following example works properly with both the transfer function and the sta
 </code>
 </pre>
 
-But there are non-zero values in the state space model produced by the tf2ss function.
+But there are non-zero values in the state-space model produced by the tf2ss function.
 
 <p align="center">
 <table>
@@ -304,7 +306,7 @@ Continuous-time model.
 </table>
 </p>
 
-## generalization
+## math expression
 
 $Let\ x_1=\boldsymbol{\alpha}Y(s)\ \to x_1'=\boldsymbol{\alpha}sY(s)= \dfrac{\boldsymbol{\alpha}}{\boldsymbol{\beta}} x_2$\
 $Let\ x_2=\boldsymbol{\beta}sY(s)\ \to x_2'=\boldsymbol{\beta}s^2Y(s)= \dfrac{\boldsymbol{\beta}}{\boldsymbol{\gamma}} x_3$\
@@ -333,7 +335,7 @@ $$y = \begin{bmatrix}
 \dfrac{\boldsymbol{b_n}}{\boldsymbol{\alpha}} & \dfrac{\boldsymbol{b_{n-1}}}{\boldsymbol{\beta}} & \dfrac{\boldsymbol{b_{n-2}}}{\boldsymbol{\gamma}} & \dfrac{\boldsymbol{b_{n-3}}}{\boldsymbol{\delta}} & ... & \dfrac{\boldsymbol{b_2}}{\boldsymbol{\vartheta}} & \dfrac{\boldsymbol{b_1}}{\boldsymbol{\varphi}}
 \end{bmatrix} x + 0*u$$
 
-If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) are modified to obtain "coefficient of the matrix = multiple of 2($2^n$)" after the continuous-to-discrete conversion,
+If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) are modified so that the coefficient of the matrix becomes a multiple of 2($2^n$) after the continuous-to-discrete conversion,
 the computational load can be reduced.(with sampling time(=*Ts*))
 
 **<p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>**
