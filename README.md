@@ -1,8 +1,9 @@
 # tf2ss second edition
 You can get following result in Octave 9.20.
 
-The result is different according to Octave version, but this method is more useful and stable. 
+The result is different according to Octave version, but this method is more useful and stable while fewer resources. 
 
+[tf2ss_se.m](https://github.com/leo92kgred/tf2ss_se/blob/main/tf2ss_se.m) isn't perfect yet, so there are some constraints.
 
 ## tf2ss function returns unstable system.
 
