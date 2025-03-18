@@ -161,6 +161,8 @@ ans = -34000000000.00003
   </tr>
 </table>
 
+There are more zero values than the state-space model obtained from the tf2ss function.
+
 <table>
   <tr>
     <td style="width: 50%;">
@@ -218,8 +220,6 @@ Continuous-time model.
     </td>
   </tr>
 </table>
-
-Moreover, there are more zero values than the state-space model obtained from the tf2ss function.
 
 ## another example
 
