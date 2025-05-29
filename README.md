@@ -307,7 +307,7 @@ Continuous-time model.
 </table>
 </p>
 
-## math expression
+## Generalizationn
 
 $Let\ x_1=\boldsymbol{\alpha}Y(s)\ \to x_1'=\boldsymbol{\alpha}sY(s)= \dfrac{\boldsymbol{\alpha}}{\boldsymbol{\beta}} x_2$\
 $Let\ x_2=\boldsymbol{\beta}sY(s)\ \to x_2'=\boldsymbol{\beta}s^2Y(s)= \dfrac{\boldsymbol{\beta}}{\boldsymbol{\gamma}} x_3$\
