@@ -340,9 +340,6 @@ $$y = \begin{bmatrix}
 
 Modifying the model variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) to yield matrices with entries that are multiples of 2 after discretization can improve computational efficiency.(with sampling time(=*Ts*))
 
-If the variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) are modified so that the coefficient of the matrix becomes a multiple of 2($2^n$) after the continuous-to-discrete conversion,
-the computational load can be reduced.(with sampling time(=*Ts*))
-
 **<p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>**
 
 # License
