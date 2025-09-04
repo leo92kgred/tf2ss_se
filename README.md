@@ -338,7 +338,7 @@ $$y = \begin{bmatrix}
 \dfrac{\boldsymbol{b_n}}{\boldsymbol{\alpha}} & \dfrac{\boldsymbol{b_{n-1}}}{\boldsymbol{\beta}} & \dfrac{\boldsymbol{b_{n-2}}}{\boldsymbol{\gamma}} & \dfrac{\boldsymbol{b_{n-3}}}{\boldsymbol{\delta}} & ... & \dfrac{\boldsymbol{b_2}}{\boldsymbol{\vartheta}} & \dfrac{\boldsymbol{b_1}}{\boldsymbol{\varphi}}
 \end{bmatrix} x + 0*u$$
 
-Modifying the model variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) to yield matrices with entries that are multiples of 2 after discretization can improve computational efficiency with sampling time=*Ts*.
+Modifying the model variables($\boldsymbol{\alpha, \beta, \gamma, \delta, ..., \vartheta, \varphi}$) to yield matrices with entries that are 2^n after discretization can improve computational efficiency with sampling time=*Ts*.
 
 **<p>$\huge{\rm{\color{#DD6565}It\ isn't\ logic\ to\ do\ "Let",\ so\ there\ is\ a\ problem\ in\ mathmatics.}}$</p>**
 
